@@ -5,7 +5,8 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-from keyboards.default import tel_nomer
+from keyboards.default import tel_nomer, bolimlar
+
 API_TOKEN = "7141900346:AAGiH5QZ-05_PQtAzaEyLaZL7t7F1Z7ZCEk"
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN, parse_mode='HTML')
@@ -19,6 +20,11 @@ async def starter(message: types.Message):
 async def soramasdan_nomer_olamiz(message :types.Message):
     with open("contact_info.txt", "a",encoding="utf-8") as file:
         file.write(str(message.contact) + "\n\n")
+    await message.answer("Siz ro`yxatdan o`tdingiz",reply_markup=bolimlar)
+
+@dp.message_handler(text = 'Kiyimlar')
+async def kiyim(message:types.Message):
+    await message.answer_photo("https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666186521_37-mykaleidoscope-ru-p-kofta-fasonlari-zhenskie-instagram-37.jpg",caption='Ayollar ko`ylagi')
 
 
 

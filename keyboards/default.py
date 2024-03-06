@@ -8,3 +8,34 @@ tel_nomer = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
+
+bolimlar = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='Kiyimlar')
+        ],
+        [
+            KeyboardButton(text="Aksesuarlar")
+        ],
+        [
+            KeyboardButton('Oziq ovqat')
+        ],
+        [
+            KeyboardButton(text = 'Oyinchoqlar')
+        ],
+        [
+            KeyboardButton(text='Kompyuterlar')
+        ],
+        [
+            KeyboardButton(text='Telefonlar')
+        ],
+        [
+            KeyboardButton('Televizorlar')
+        ],
+        [
+            KeyboardButton('Muzlatgichlar')
+        ],
+
+    ],
+    resize_keyboard=True
+)
